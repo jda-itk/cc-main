@@ -1,0 +1,5 @@
+# cc-main
+
+plugins:
+  cc_main_enabled:
+    default: false
