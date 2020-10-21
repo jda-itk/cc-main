@@ -5,6 +5,8 @@
 
 enabled_site_setting :cc_main_enabled
 
+register_asset 'stylesheets/cc-main.scss'
+
 after_initialize do
     load File.expand_path('../app/controllers/sklforums_controller.rb', __FILE__)
   

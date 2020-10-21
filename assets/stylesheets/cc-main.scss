@@ -1,0 +1,19 @@
+.category-list-item {
+    margin-bottom: 0;
+    &.category {
+        border-top: solid 1px rgba(61,63,75,0.3) !important;
+        &:not(:last-of-type) {
+            border-bottom: none !important;
+        }
+        &:last-of-type {
+            border-bottom: solid 1px rgba(61,63,75,0.3) !important;
+        }
+    }
+}
+
+.cc-nav-container {
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0 3px 5px 3px;
+    position: relative;
+}

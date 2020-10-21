@@ -1,4 +1,38 @@
+<div class="list-controls">
+    <div class="container">
+        <section class="navigation-container ember-view">  
+            {{#if model.isMobileView}}
+                <div class="cc-nav-container">{{mount-widget widget="navigation-bar-widget" args=model.isMobileView}}</div>
+            {{else}}
+                {{mount-widget widget="navigation-bar-widget" args='desktop'}}
+            {{/if}}
+            <span class="ember-view"><!----></span>
+            {{mount-widget widget="new-topic-widget" args=model.parent_category_id}}
+        </section>
+    </div>
+</div>
+<div id="list-area">
+    <span class="ember-view">
+        <div class="discovery-list-container-top-outlet discourse-adplugin ember-view">
+            <div class="ember-view"></div>
+        </div>
+    </span>
+    <div class="contents ember-view">
+        {{#if model.isMobileView}}
+        <div class="ember-view">    
+            {{category-list-items-mobile categories=model.filteredData parent=model.parentCategory}}
+        </div>    
+        {{else}}
+        <div class="categories-and-latest ember-view">
+            <div class="column categories">
+                {{category-list-items-desktop categories=model.filteredData parent=model.parentCategory}}
+            </div>
+            <div class="column">
+                {{latest-list-items-desktop latest=model.latest}}
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
 
-{{forums-list-items categories=model}}
-
-{{d-button action="showCreateAccount" class="btn-primary sign-up-button" label="sign_up"}}
+{{!-- {{d-button action="showCreateAccount" class="btn-primary sign-up-button" label="sign_up"}} --}}

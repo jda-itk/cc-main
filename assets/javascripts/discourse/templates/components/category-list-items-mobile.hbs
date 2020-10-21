@@ -1,0 +1,28 @@
+<div class="category-list">
+    {{#each categories as |category|}}
+    <div data-category-id="{{category.id}}" data-notification-level="regular" style={{ccBorderColor category.color}} class="category-list-item category ">
+        <table class="topic-list">
+            <tbody>
+                <tr>
+                    <td class="main-link">
+                        <h3 class="ember-view">
+                            <a class="category-title-link" href="/c/{{parent.0.slug}}/{{category.slug}}/{{category.id}}">
+                                <div class="category-text-title">
+                                    <span class="category-name">{{category.name}}</span>
+                                </div>
+                            </a>
+                        </h3>
+                    </td>
+                    <td class="num posts">
+                        <div class="num posts-map posts heatmap-" title="This topic has {{category.topic_count}} reply">
+                            <a href="" class="posts-map badge-posts heatmap-">
+                                <span class="number" aria-label="This topic has {{category.topic_count}} reply">{{category.topic_count}}</span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {{/each}}
+</div>

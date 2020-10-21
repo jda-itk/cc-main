@@ -1,7 +1,7 @@
 class SklforumsController < ApplicationController  
     
   def index
-    json_data = { name: "Sample Category", slug: "sample-category",  }
+    json_data = {}
 
     render json: json_data    
   end

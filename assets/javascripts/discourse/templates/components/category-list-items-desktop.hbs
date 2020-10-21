@@ -1,0 +1,28 @@
+<table class="category-list ">
+  <thead>
+    <tr>
+      <th class="category">
+        <span aria-role="heading" aria-level="2" id="categories-only-category">Category</span>
+      </th>
+      <th class="topics">Topics</th>
+    </tr>
+  </thead>
+  <tbody aria-labelledby="categories-only-category">
+    {{#each categories as |category|}}
+    <tr data-category-id="{{category.id}}" data-notification-level="regular" class="no-description no-logo">
+      <td class="category  " style={{ccBorderColor category.color}}>
+        <h3 class="ember-view">
+          <a class="category-title-link" href="/c/{{parent.0.slug}}/{{category.slug}}/{{category.id}}">
+            <div class="category-text-title">
+              <span class="category-name">{{category.name}}</span>
+            </div>
+          </a>
+        </h3>
+      </td>
+      <td class="topics">
+        <div title="{{category.num_featured_topics}} topics"><span class="value">{{category.num_featured_topics}}</span></div>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
